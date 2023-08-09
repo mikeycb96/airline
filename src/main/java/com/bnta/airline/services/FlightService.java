@@ -27,5 +27,15 @@ public class FlightService {
         flightRepository.deleteById(id);
     }
 
+    public void updateFlight(Flight flight, Long id){
+        Flight flightToUpdate = flightRepository.findById(id).get();
+        flightToUpdate.setDestination(flight.getDestination());
+        flightToUpdate.setCapacity(flight.getCapacity());
+        flightToUpdate.setPassengers(flight.getPassengers());
+        flightToUpdate.setDepartureDate(flight.getDepartureDate());
+        flightToUpdate.setDepartureTime(flight.getDepartureTime());
+        flightRepository.save(flightToUpdate);
+    }
+
 
 }

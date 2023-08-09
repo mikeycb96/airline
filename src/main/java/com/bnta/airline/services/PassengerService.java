@@ -37,8 +37,8 @@ public class PassengerService {
         return passengerRepository.findAll();
     }
 
-    public void addPassenger(Passenger passenger){
-        passengerRepository.save(passenger);
-    }
 
+    public Passenger addPassenger(Passenger passenger) {
+        return passengerRepository.save(passenger);
+    }
 }
