@@ -33,11 +33,11 @@ public class Flight {
     public Flight(String destination,
                   int capacity,
                   String departureDate,
-                  int departureTime){
+                  String departureTime){
         this.destination = destination;
         this.capacity = capacity;
         this.departureDate = departureDate;
-        this.departureTime = departureTime;
+        this.departureTime = Integer.parseInt(departureTime);
         this.passengers = new ArrayList<Passenger>();
 
     }
