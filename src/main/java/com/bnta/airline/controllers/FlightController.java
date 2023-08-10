@@ -1,8 +1,6 @@
 package com.bnta.airline.controllers;
 
 import com.bnta.airline.models.Flight;
-import com.bnta.airline.models.Passenger;
-import com.bnta.airline.models.PassengerDTO;
 import com.bnta.airline.services.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

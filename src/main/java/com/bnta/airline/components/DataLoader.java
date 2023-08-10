@@ -54,37 +54,37 @@ public class DataLoader implements ApplicationRunner {
         Passenger passenger2 = new Passenger("Kevin", "kevin@bnta.com");
         passenger1.addFlight(flight1);
         passenger1.addFlight(flight5);
-        passengerRepository.save(passenger1);
+        passengerRepository.save(passenger2);
 
         Passenger passenger3 = new Passenger("Callum", "callum@bnta.com");
         passenger1.addFlight(flight4);
         passenger1.addFlight(flight5);
-        passengerRepository.save(passenger1);
+        passengerRepository.save(passenger3);
 
         Passenger passenger4 = new Passenger("Rohaib", "rohaib@bnta.com");
         passenger1.addFlight(flight3);
         passenger1.addFlight(flight4);
-        passengerRepository.save(passenger1);
+        passengerRepository.save(passenger4);
 
         Passenger passenger5 = new Passenger("Tarek", "tarek@bnta.com");
         passenger1.addFlight(flight2);
         passenger1.addFlight(flight3);
-        passengerRepository.save(passenger1);
+        passengerRepository.save(passenger5);
 
         Passenger passenger6 = new Passenger("Mohamed", "mohamed@bnta.com");
         passenger1.addFlight(flight3);
         passenger1.addFlight(flight5);
-        passengerRepository.save(passenger1);
+        passengerRepository.save(passenger6);
 
         Passenger passenger7 = new Passenger("Zaiyad", "zaiyad@bnta.com");
         passenger1.addFlight(flight1);
         passenger1.addFlight(flight4);
-        passengerRepository.save(passenger1);
+        passengerRepository.save(passenger7);
 
         Passenger passenger8 = new Passenger("Abdulaziz", "abdulaziz@bnta.com");
         passenger1.addFlight(flight4);
         passenger1.addFlight(flight5);
-        passengerRepository.save(passenger1);
+        passengerRepository.save(passenger8);
 
     }
 }
