@@ -40,4 +40,19 @@ public class PassengerController {
         return new ResponseEntity<>(passengerService.displayAllPassengersInfo(), HttpStatus.CREATED);
     }
 
+    //    UPDATE
+    @PatchMapping
+    public ResponseEntity<Passenger> updatePassengerFlights(@RequestBody PassengerDTO passengerDTO,
+                                                            @PathVariable Long id){
+        Passenger updatePassengerFlights = passengerService.bookPassenger(passengerDTO, id);
+        return new ResponseEntity<>(updatePassengerFlights, HttpStatus.OK);
+    }
+
+    //    UPDATE
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Passenger> updatePassenger(@RequestBody PassengerDTO passengerDTO, @PathVariable Long id){
+        Passenger updatedPassenger = passengerService.updatePassenger(passengerDTO, id);
+        return new ResponseEntity<>(updatedPassenger, HttpStatus.OK);
+    }
+
 }

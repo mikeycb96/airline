@@ -19,14 +19,14 @@ public class PassengerService {
     @Autowired
     FlightRepository flightRepository;
 
-    public void bookPassenger(PassengerDTO passengerDTO){
+    public Passenger bookPassenger(PassengerDTO passengerDTO, Long id){
         Passenger passenger = new Passenger(passengerDTO.getName(), passengerDTO.getEmailAddress());
 
         for (Long flightId : passengerDTO.getFlightIds()){
             Flight flight = flightRepository.findById(flightId).get();
             passenger.addFlight(flight);
         }
-        passengerRepository.save(passenger);
+        return passengerRepository.save(passenger);
     }
 
     public Passenger displayPassengerInfo(Long id){
@@ -38,7 +38,19 @@ public class PassengerService {
     }
 
 
-    public Passenger addPassenger(Passenger passenger) {
-        return passengerRepository.save(passenger);
+    public void addPassenger(Passenger passenger) {
+        passengerRepository.save(passenger);
+    }
+
+    public Passenger updatePassenger(PassengerDTO passengerDTO, Long id) {
+        Passenger passengerToUpdate = passengerRepository.findById(id).get();
+        passengerToUpdate.setName(passengerDTO.getName());
+        passengerToUpdate.setEmailAddress(passengerDTO.getEmailAddress());
+        for (Long flightId : passengerDTO.getFlightIds()) {
+            Flight flight = flightRepository.findById(flightId).get();
+            passengerToUpdate.addFlight(flight);
+        }
+        passengerRepository.save(passengerToUpdate);
+        return passengerToUpdate;
     }
 }
